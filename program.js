@@ -1,9 +1,12 @@
 var fs = require("fs");
 
-var buff = Buffer.from(fs.readFileSync(process.argv[2]))
-	.toString("utf8").split("\n").length - 1;
+fs.readFileSync(process.argv[2], function (err, data) {
+	readData = data.toString("utf8").split("\n").length - 1;
+	console.log(readData);
+})
 
-console.log(buff);
+
+
 
 //official solution for reference
 // var fs = require('fs')
